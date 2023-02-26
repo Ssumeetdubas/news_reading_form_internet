@@ -1,0 +1,249 @@
+import json
+import requests
+
+def speak(str):
+    import pyttsx3
+
+    engine = pyttsx3.init()
+
+    text = "Python is a great programming language"
+    engine.setProperty("rate", 120)
+    engine.say(str)
+
+    engine.runAndWait()
+
+op=int(input("enter the contry name for news\n1:India\n2:US\n3:Austrilla\n"))
+if op==1:
+    news_type=int(input("\n1:techonology\n2:general\n3:bussiness"))
+    if news_type==1:
+        t=requests.get("https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy=t.text
+        p=json.loads(yy)
+        main_dic=p.copy()
+        print(main_dic)
+        w=main_dic['articles']
+        print(type(w))
+        count1=0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt=(item.values())
+            print(tt)
+            speak(tt)
+            count1=count1+1
+            if count1==6:
+                break
+
+
+
+    if news_type==2:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count2=0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count2=count2+1
+            if count2==6:
+                break
+
+    if news_type==3:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count7=0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count7=count7+1
+            if count7==6:
+                break
+
+elif op==2:
+    news_type2 = int(input("\n1:techonology\n2:general\n3:bussiness\n"))
+    if news_type2==1:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count3=0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count3=count3+1
+            if count3==6:
+                break
+
+    if news_type2==2:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count4=0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count4=count4+1
+            if count4==6:
+                break
+
+    if news_type2 == 3:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count9 = 0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count9 = count9 + 1
+            if count9 == 6:
+                break
+
+
+
+elif op==3:
+    news_type2 = int(input("\n1:techonology\n2:general\n3:bussiness\n"))
+    if news_type2==1:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=au&category=technology&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count3=0
+
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count3=count3+1
+            if count3==6:
+                break
+
+    if news_type2==2:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=au&category=general&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count4=0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count4=count4+1
+            if count4==6:
+                break
+
+    if news_type2==3:
+
+        t = requests.get("https://newsapi.org/v2/top-headlines?country=au&category=business&apiKey=9e6fa852eb964486ab56da403dfd1987")
+        yy = t.text
+        p = json.loads(yy)
+        main_dic = p.copy()
+        print(main_dic)
+        w = main_dic['articles']
+        print(type(w))
+        count14=0
+        for item in w:
+            item.pop("source")
+            item.pop("author")
+            item.pop("url")
+            item.pop("urlToImage")
+            item.pop("publishedAt")
+            item.pop("content")
+            # print(item.keys())
+            tt = (item.values())
+            print(tt)
+            speak(tt)
+            count14=count14+1
+            if count14==6:
+                break
